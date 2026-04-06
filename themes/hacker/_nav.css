@@ -1,0 +1,60 @@
+/* ── Nav container ───────────────────────────────────────────── */
+nav { background: linear-gradient(to bottom, rgba(2,10,2,0.96) 0%, transparent 100%); border-bottom: 1px solid transparent; font-family: var(--hk-mono); }
+nav.scrolled { background: rgba(2,10,2,0.97); border-bottom: 1px solid rgba(0,255,65,0.15); box-shadow: 0 2px 30px rgba(0,255,65,0.05); }
+
+/* ── Logo ────────────────────────────────────────────────────── */
+.logo-mark {
+  background: transparent; border: 1px solid rgba(0,255,65,0.6); color: #00ff41; font-family: var(--hk-mono);
+  box-shadow: 0 0 12px rgba(0,255,65,0.4), inset 0 0 8px rgba(0,255,65,0.1);
+  animation: hackLogoGlow 2s ease-in-out infinite !important;
+}
+@keyframes hackLogoGlow {
+  0%,100% { box-shadow: 0 0 8px rgba(0,255,65,0.4), inset 0 0 8px rgba(0,255,65,0.1); }
+  50%      { box-shadow: 0 0 22px rgba(0,255,65,0.8), inset 0 0 14px rgba(0,255,65,0.2); }
+}
+.logo-name {
+  font-family: var(--hk-mono) !important; letter-spacing: 3px;
+  background: linear-gradient(90deg, #00ff41 0%, #00ffcc 30%, #00ff41 55%, #33ff77 80%, #00ff41 100%) !important;
+  background-size: 280% auto !important;
+  -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important;
+  animation: gradFlow 5s linear infinite !important;
+}
+.logo-name span { -webkit-text-fill-color: inherit !important; }
+
+/* ── Nav tabs ────────────────────────────────────────────────── */
+.nav-tab { font-family: var(--hk-mono); color: var(--text3); border: 1px solid transparent; transition: all 0.2s; }
+.nav-tab:hover { color: var(--text); border-color: rgba(0,255,65,0.2); box-shadow: 0 0 10px rgba(0,255,65,0.1); }
+.nav-tab.active {
+  background: rgba(0,255,65,0.08) !important; color: #00ff41 !important;
+  border-color: rgba(0,255,65,0.3); animation: hackTabGlow 2.5s ease-in-out infinite !important;
+  box-shadow: 0 0 14px rgba(0,255,65,0.15) !important;
+}
+@keyframes hackTabGlow {
+  0%,100% { box-shadow: 0 0 8px rgba(0,255,65,0.15); }
+  50%      { box-shadow: 0 0 20px rgba(0,255,65,0.35); }
+}
+
+/* ── Search ──────────────────────────────────────────────────── */
+.search-wrap { border-color: rgba(0,255,65,0.15); background: rgba(0,255,65,0.03); }
+.search-wrap:focus-within { border-color: rgba(0,255,65,0.5) !important; background: rgba(0,10,0,0.8) !important; box-shadow: 0 0 16px rgba(0,255,65,0.25) !important; animation: none !important; }
+.search-wrap input { font-family: var(--hk-mono); color: #00ff41; }
+.search-wrap input::placeholder { color: rgba(0,255,65,0.3); }
+
+/* ── Nav buttons ─────────────────────────────────────────────── */
+.nav-contact { background: transparent; border: 1px solid rgba(0,255,65,0.5); color: #00ff41; font-family: var(--hk-mono); letter-spacing: 1px; box-shadow: 0 0 10px rgba(0,255,65,0.15); }
+.nav-contact:hover { background: rgba(0,255,65,0.1); border-color: #00ff41; box-shadow: 0 0 20px rgba(0,255,65,0.4); transform: scale(1.04); }
+.nav-user   { border-color: rgba(0,255,65,0.15); font-family: var(--hk-mono); }
+.nav-avatar { background: transparent; border: 1px solid rgba(0,255,65,0.5); color: #00ff41; }
+.nav-settings-btn { border-color: rgba(0,255,65,0.3) !important; color: rgba(0,255,65,0.6) !important; animation: hackBtnGlow 4s ease-in-out infinite !important; }
+.nav-settings-btn:hover { border-color: #00ff41 !important; color: #00ff41 !important; animation: hackCardBorder 2s linear infinite !important; }
+
+/* ── Smartlink ───────────────────────────────────────────────── */
+#nav-smartlink {
+  background: linear-gradient(90deg, #00ff41 0%, #00ffcc 30%, #00ff41 55%, #33ff77 80%, #00ff41 100%) !important;
+  background-size: 300% auto !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important;
+  animation: gradFlow 4s linear infinite !important; border-color: rgba(0,255,65,0.4) !important;
+}
+
+/* ── Bottom nav (mobile) ─────────────────────────────────────── */
+.bnav-item.active .bnav-label { color: #00ff41 !important; animation: hackGoldGlow 2.5s ease-in-out infinite; }
+.bnav-item.active .bnav-icon  { color: #00ff41 !important; animation: floatY 2.5s ease-in-out infinite; }

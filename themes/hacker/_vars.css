@@ -1,0 +1,42 @@
+/* ── Google Font ─────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* ── CSS Variables ───────────────────────────────────────────── */
+:root {
+  --red:      #00ff41;
+  --red2:     #00cc33;
+  --red-glow: rgba(0,255,65,0.4);
+  --gold:     #00ffcc;
+  --green:    #00ff41;
+  --bg:       #020a02;
+  --bg2:      #060f06;
+  --bg3:      #0a180a;
+  --bg4:      #112011;
+  --bg5:      #1a2e1a;
+  --border:   rgba(0,255,65,0.1);
+  --border2:  rgba(0,255,65,0.2);
+  --text:     #e0ffe0;
+  --text2:    #7db87d;
+  --text3:    #3a6e3a;
+  --hk-mono:  'Share Tech Mono', monospace;
+}
+
+/* ── Body + Scanline ─────────────────────────────────────────── */
+body { font-family: var(--hk-mono); background: var(--bg); cursor: default; }
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: 99999; pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 4px);
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar-thumb       { background: rgba(0,255,65,0.3); }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,255,65,0.7); }
+
+/* ── General text ────────────────────────────────────────────── */
+h1, h2, h3 { font-family: var(--hk-mono); }
+button, input, select, textarea { font-family: var(--hk-mono); }
+
+/* ── Reduce motion ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; will-change: auto !important; }
+}

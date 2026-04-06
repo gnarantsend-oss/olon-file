@@ -1,0 +1,46 @@
+/* ── Section titles ──────────────────────────────────────────── */
+.sec-title {
+  font-family: var(--hk-mono) !important; letter-spacing: 1px;
+  background: linear-gradient(90deg, #00ff41 0%, #00ffcc 35%, #00ff41 60%, #33ff99 80%, #00ff41 100%) !important;
+  background-size: 250% auto !important;
+  -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important;
+  animation: gradFlow 7s linear infinite !important;
+}
+.sec-title::before { content: '> '; -webkit-text-fill-color: rgba(0,255,65,0.5); color: rgba(0,255,65,0.5); }
+.sec-more { font-family: var(--hk-mono); color: rgba(0,255,65,0.4); }
+.sec-more:hover { color: #00ff41; }
+
+/* ── Movie cards ─────────────────────────────────────────────── */
+.mcard-poster-wrap { background: var(--bg3); }
+.mcard-title { font-family: var(--hk-mono); font-size: 13px; color: var(--text); }
+.mcard-sub   { font-family: var(--hk-mono); color: var(--text3); }
+.mcard-sub .st { color: #00ffcc !important; animation: hackGoldGlow 2.5s ease-in-out infinite; }
+@media (hover: hover) {
+  .mcard:hover::before {
+    background: linear-gradient(45deg, #00ff41 0%, #00ffcc 50%, #00cc33 100%) !important;
+    animation: cardGlowShift 3s ease-in-out infinite !important; opacity: 0.6 !important;
+  }
+  .mcard:hover .mcard-poster-wrap {
+    border-color: rgba(0,255,65,0.4) !important;
+    box-shadow: 0 0 20px rgba(0,255,65,0.3), 0 15px 30px rgba(0,0,0,0.8) !important;
+    animation: hackCardBorder 3s linear infinite !important;
+  }
+}
+@keyframes hackCardBorder {
+  0%,100% { border-color: rgba(0,255,65,0.4); }
+  50%      { border-color: rgba(0,255,200,0.7); }
+}
+.mcard-play { background: transparent !important; border: 1.5px solid rgba(0,255,65,0.7) !important; box-shadow: 0 0 12px rgba(0,255,65,0.4) !important; animation: hackBtnGlow 2s ease-in-out infinite !important; }
+.mcard-play svg { fill: #00ff41 !important; }
+.scroll-btn { background: rgba(2,10,2,0.8); color: #00ff41; }
+.scroll-btn:hover { color: #00ffcc; box-shadow: 0 0 15px rgba(0,255,65,0.3); animation: none !important; }
+
+/* ── Genre pills ─────────────────────────────────────────────── */
+.gpill { font-family: var(--hk-mono); border-color: rgba(0,255,65,0.2); background: rgba(0,255,65,0.03); color: var(--text2); letter-spacing: 0.5px; }
+.gpill:hover { background: rgba(0,255,65,0.08); border-color: rgba(0,255,65,0.4); color: #00ff41; }
+.gpill.on { background: rgba(0,255,65,0.1) !important; color: #00ff41 !important; border-color: rgba(0,255,65,0.5) !important; box-shadow: 0 0 12px rgba(0,255,65,0.2) !important; animation: hackCardBorder 3s linear infinite !important; }
+
+/* ── Game cards ──────────────────────────────────────────────── */
+.game-card { border-color: rgba(0,255,65,0.1) !important; background: var(--bg3) !important; }
+.game-card:hover { box-shadow: 0 0 20px rgba(0,255,65,0.2) !important; border-color: rgba(0,255,65,0.4) !important; animation: hackBtnGlow 2s ease-in-out infinite !important; }
+.game-title { font-family: var(--hk-mono); color: var(--text); }

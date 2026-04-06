@@ -1,0 +1,62 @@
+/* ── Hero tag ────────────────────────────────────────────────── */
+.hero-tag {
+  background: transparent !important; border: 1px solid rgba(0,255,65,0.6) !important; color: #00ff41 !important;
+  font-family: var(--hk-mono) !important; letter-spacing: 2.5px !important;
+  box-shadow: 0 0 12px rgba(0,255,65,0.3), 0 0 30px rgba(0,255,65,0.1) !important;
+  animation: hackTagPulse 2s ease-in-out infinite !important;
+}
+@keyframes hackTagPulse {
+  0%,100% { box-shadow: 0 0 8px rgba(0,255,65,0.3), 0 0 20px rgba(0,255,65,0.1); }
+  50%      { box-shadow: 0 0 18px rgba(0,255,65,0.6), 0 0 40px rgba(0,255,65,0.2); }
+}
+.hero-tag::after { background: linear-gradient(90deg, transparent, rgba(0,255,65,0.2), transparent) !important; }
+
+/* ── Hero title ──────────────────────────────────────────────── */
+.hero-title {
+  font-family: var(--hk-mono) !important; text-shadow: none !important;
+  background: linear-gradient(120deg, #e0ffe0 0%, #00ff41 25%, #e0ffe0 50%, #00ffcc 75%, #e0ffe0 100%) !important;
+  background-size: 280% auto !important;
+  -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important;
+  animation: gradFlow 6s linear infinite !important;
+}
+
+/* ── Hero meta ───────────────────────────────────────────────── */
+.hero-meta span { font-family: var(--hk-mono); color: var(--text2); }
+.hero-meta .star { color: #00ffcc !important; animation: hackGoldGlow 2s ease-in-out infinite; }
+@keyframes hackGoldGlow {
+  0%,100% { text-shadow: 0 0 6px rgba(0,255,200,0.5); }
+  50%      { text-shadow: 0 0 14px rgba(0,255,200,0.9), 0 0 30px rgba(0,255,200,0.4); }
+}
+.hero-meta .tag { border-color: rgba(0,255,65,0.25) !important; font-family: var(--hk-mono); color: rgba(0,255,65,0.8); }
+
+/* ── Hero desc ───────────────────────────────────────────────── */
+.hero-desc { font-family: var(--hk-mono); color: rgba(180,255,180,0.65); }
+
+/* ── Hero buttons ────────────────────────────────────────────── */
+.btn-watch {
+  background: transparent !important; border: 1.5px solid rgba(0,255,65,0.8) !important; color: #00ff41 !important;
+  font-family: var(--hk-mono) !important; letter-spacing: 1px;
+  box-shadow: 0 0 16px rgba(0,255,65,0.2) !important; animation: hackBtnGlow 2s ease-in-out infinite !important;
+}
+.btn-watch:hover { background: rgba(0,255,65,0.12) !important; box-shadow: 0 0 30px rgba(0,255,65,0.5) !important; }
+.btn-watch::after { background: linear-gradient(105deg, transparent 30%, rgba(0,255,65,0.2) 50%, transparent 70%) !important; }
+@keyframes hackBtnGlow {
+  0%,100% { box-shadow: 0 0 10px rgba(0,255,65,0.2), inset 0 0 0 transparent; }
+  50%      { box-shadow: 0 0 25px rgba(0,255,65,0.5), 0 0 50px rgba(0,255,65,0.15); }
+}
+.btn-more { background: rgba(0,255,65,0.04) !important; border: 1px solid rgba(0,255,65,0.2) !important; color: rgba(0,255,65,0.7) !important; font-family: var(--hk-mono) !important; }
+.btn-more:hover { background: rgba(0,255,65,0.1) !important; border-color: rgba(0,255,65,0.5) !important; }
+.btn-volume { border-color: rgba(0,255,65,0.3) !important; color: rgba(0,255,65,0.6) !important; }
+.btn-volume:hover { border-color: rgba(0,255,65,0.8) !important; background: rgba(0,255,65,0.1) !important; color: #00ff41 !important; }
+
+/* ── Hero progress ───────────────────────────────────────────── */
+.hero-progress { background: rgba(0,255,65,0.06); }
+.hero-progress-fill {
+  background: linear-gradient(90deg, #00ff41 0%, #00ffcc 50%, #00ff41 100%) !important;
+  background-size: 200% 100% !important;
+  box-shadow: 0 0 10px rgba(0,255,65,0.8), 0 0 25px rgba(0,255,65,0.3) !important;
+  animation: progressShimmer 2.5s linear infinite !important;
+}
+.hero-dot       { background: rgba(0,255,65,0.2); }
+.hero-dot.active { background: #00ff41; box-shadow: 0 0 10px rgba(0,255,65,0.7) !important; }
+.hero-dot:hover:not(.active) { background: rgba(0,255,65,0.5); }

@@ -1,0 +1,28 @@
+/* ── Toast ───────────────────────────────────────────────────── */
+.toast { font-family: var(--hk-mono); background: rgba(2,10,2,0.97); border-color: rgba(0,255,65,0.3); border-left-color: #00ff41 !important; color: #00ff41; box-shadow: 0 10px 30px rgba(0,0,0,0.7), 0 0 20px rgba(0,255,65,0.1); }
+.toast.show { animation: hackCardBorder 3s linear infinite !important; }
+
+/* ── Search page ─────────────────────────────────────────────── */
+.search-page-input { font-family: var(--hk-mono); background: rgba(0,255,65,0.03) !important; border-color: rgba(0,255,65,0.2) !important; color: #00ff41 !important; }
+.search-page-input:focus { border-color: rgba(0,255,65,0.6) !important; box-shadow: 0 0 20px rgba(0,255,65,0.2) !important; animation: none !important; }
+.search-page-input::placeholder { color: rgba(0,255,65,0.3) !important; }
+
+/* ── Page titles ─────────────────────────────────────────────── */
+.page-h1 {
+  font-family: var(--hk-mono) !important;
+  background: linear-gradient(90deg, #00ff41 0%, #00ffcc 35%, #00ff41 60%, #e0ffe0 80%, #00ff41 100%) !important;
+  background-size: 280% auto !important;
+  -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important;
+  animation: gradFlow 7s linear infinite !important;
+}
+.page-h1::before { content: '// '; -webkit-text-fill-color: rgba(0,255,65,0.4); color: rgba(0,255,65,0.4); }
+
+/* ── Weather ─────────────────────────────────────────────────── */
+.w-temp-big {
+  font-family: var(--hk-mono) !important;
+  background: linear-gradient(135deg, #00ff41 0%, #00ffcc 50%, #e0ffe0 100%) !important;
+  background-size: 200% auto !important;
+  -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important;
+  animation: gradFlow 5s ease-in-out infinite !important;
+}
+.w-card:hover { border-color: rgba(0,255,65,0.4) !important; box-shadow: 0 0 15px rgba(0,255,65,0.15) !important; animation: none !important; }
