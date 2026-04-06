@@ -1,0 +1,50 @@
+<!-- ╔══════════════════════════════════════════════╗
+     ║  MODAL: КИНО ДЭЛГЭРЭНГҮЙ                   ║
+     ╚══════════════════════════════════════════════╝ -->
+<div class="modal-bg" id="movieModal" onclick="closeBg(event, 'movieModal')">
+  <div class="modal">
+    <button class="mcls" onclick="closeModal('movieModal')">✕</button>
+    <div class="m-hero" id="mHero"></div>
+    <div class="m-body">
+      <div class="m-title" id="mTitle"></div>
+      <div class="m-meta"  id="mMeta"></div>
+      <div class="m-desc"  id="mDesc"></div>
+      <div class="m-acts"  id="mActs"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ╔══════════════════════════════════════════════╗
+     ║  MODAL: ЦУВРАЛ ДЭЛГЭРЭНГҮЙ                 ║
+     ╚══════════════════════════════════════════════╝ -->
+<div class="modal-bg" id="seriesModal" onclick="closeBg(event, 'seriesModal')">
+  <div class="modal" style="max-width: 860px;">
+    <button class="mcls" onclick="closeModal('seriesModal')">✕</button>
+    <div class="m-hero" id="smHero"></div>
+    <div class="m-body">
+      <div class="m-title" id="smTitle"></div>
+      <div class="m-meta"  id="smMeta"></div>
+      <div class="m-desc"  id="smDesc"></div>
+      <div class="ep-grid" id="smEpGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ╔══════════════════════════════════════════════╗
+     ║  MODAL: PLAYER                              ║
+     ╚══════════════════════════════════════════════╝ -->
+<div class="modal-bg" id="playerModal" onclick="closeBg(event, 'playerModal')">
+  <div class="modal pmodal">
+    <button class="mcls" onclick="closePlayerModal()">✕</button>
+    <div class="player-frame-wrap">
+      <iframe id="playerFrame"
+              src=""
+              allowfullscreen
+              allow="autoplay; fullscreen; picture-in-picture">
+      </iframe>
+    </div>
+    <div class="player-info">
+      <div class="m-title" id="playerTitle"></div>
+    </div>
+  </div>
+</div>

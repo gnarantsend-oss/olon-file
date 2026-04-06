@@ -1,0 +1,32 @@
+/* ══════════════════════════════════════════════════
+   style/main.css  —  Бүх файлыг нэгтгэх цэг
+   Тус бүрийг өөрчлөхийн тулд харгалзах файлаа нээ:
+   ══════════════════════════════════════════════════
+
+   variables.css   → CSS хувьсагчид (:root)
+   reset.css       → Box-sizing, body, button, img
+   navbar.css      → Навигацийн хэсэг
+   hero.css        → Hero banner
+   layout.css      → Хуудас, секц, мөр, grid
+   card.css        → Кино карт (.mcard)
+   toast.css       → Toast мэдэгдэл
+   modal.css       → Modal + Player
+   episodes.css    → Анги жагсаалт
+   genres.css      → Жанр товч (.gpill)
+   search.css      → Хайлтын хэсэг
+   responsive.css  → Мобайл (@media)
+
+   ══════════════════════════════════════════════════ */
+
+@import url('variables.css');
+@import url('reset.css');
+@import url('navbar.css');
+@import url('hero.css');
+@import url('layout.css');
+@import url('card.css');
+@import url('toast.css');
+@import url('modal.css');
+@import url('episodes.css');
+@import url('genres.css');
+@import url('search.css');
+@import url('responsive.css');

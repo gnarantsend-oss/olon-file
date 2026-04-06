@@ -1,0 +1,31 @@
+/* ── Modal ──────────────────────────────────────── */
+.modal-bg {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,.75); backdrop-filter: blur(4px);
+  display: none; place-items: center;
+}
+.modal-bg.open { display: grid; }
+.modal {
+  position: relative; width: min(92vw, 720px); max-height: 90vh;
+  background: var(--bg3); border-radius: 12px; overflow-y: auto;
+}
+.mcls {
+  position: absolute; top: 12px; right: 12px; z-index: 10;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(0,0,0,.6); color: #fff; font-size: 16px;
+  display: grid; place-items: center;
+}
+.m-hero { height: 240px; background-size: cover; background-position: center; border-radius: 12px 12px 0 0; }
+.m-body { padding: 24px; }
+.m-title { font-family: 'Oswald', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+.m-meta  { font-size: 13px; color: var(--text2); margin-bottom: 12px; }
+.m-desc  { font-size: 14px; color: var(--text2); line-height: 1.6; margin-bottom: 16px; }
+
+/* ── Player modal ───────────────────────────────── */
+.pmodal { width: min(96vw, 900px); background: #000; }
+.player-frame-wrap { position: relative; padding-top: 56.25%; }
+.player-frame-wrap iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: none;
+}
+.player-info { padding: 14px 20px; background: var(--bg3); }
+.player-info .m-title { font-size: 18px; }

@@ -1,0 +1,20 @@
+/* ── Карт ───────────────────────────────────────── */
+.mcard {
+  flex: 0 0 150px; border-radius: var(--radius); overflow: hidden;
+  cursor: pointer; transition: transform .25s;
+  background: var(--bg2);
+}
+.mcard:hover { transform: scale(1.05); z-index: 2; }
+.mcard-poster-wrap { position: relative; aspect-ratio: 2/3; overflow: hidden; }
+.mcard-poster      { width: 100%; height: 100%; object-fit: cover; }
+.mcard-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.55);
+  display: grid; place-items: center;
+  opacity: 0; transition: opacity .2s;
+}
+.mcard:hover .mcard-overlay { opacity: 1; }
+.mcard-play-icon { font-size: 36px; color: #fff; }
+.mcard-info  { padding: 8px 10px; }
+.mcard-title { font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mcard-meta  { font-size: 11px; color: var(--text3); margin-top: 2px; }

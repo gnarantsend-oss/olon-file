@@ -1,0 +1,8 @@
+/* ── Mobile ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  main { padding: 0 12px; }
+  .hero-body { padding: 20px; }
+  .nav-tabs  { display: none; }
+  .mgrid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+  .mcard { flex: 0 0 120px; }
+}

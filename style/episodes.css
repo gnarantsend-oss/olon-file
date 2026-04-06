@@ -1,0 +1,10 @@
+/* ── Episodes ───────────────────────────────────── */
+.ep-grid { display: flex; flex-direction: column; gap: 6px; }
+.ep-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px; border-radius: 6px; cursor: pointer;
+  background: rgba(255,255,255,.04); transition: background .2s;
+}
+.ep-item:hover { background: rgba(255,255,255,.1); }
+.ep-num   { font-size: 18px; font-weight: 700; color: var(--text3); min-width: 28px; }
+.ep-label { font-size: 14px; }

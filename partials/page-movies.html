@@ -1,0 +1,23 @@
+<!-- ╔══════════════════════════════════════════════╗
+     ║  ХУУДАС: КИНО  (page-movies)               ║
+     ╚══════════════════════════════════════════════╝ -->
+<div class="page active" id="page-movies">
+  <main>
+
+    <!-- Цувралын мөр -->
+    <section class="sec">
+      <div class="sec-head">
+        <div class="sec-title">📺 Шилдэг цувралууд</div>
+      </div>
+      <div class="row-wrap">
+        <button class="scroll-btn left"  onclick="scrollRow('rowSeries', -600)">❮</button>
+        <div class="scroll-row" id="rowSeries"></div>
+        <button class="scroll-btn right" onclick="scrollRow('rowSeries', 600)">❯</button>
+      </div>
+    </section>
+
+    <!-- Жанраар үүсгэгдэх мөрүүд (movies.js → buildHomeRows) -->
+    <div id="dynamicRows"></div>
+
+  </main>
+</div>

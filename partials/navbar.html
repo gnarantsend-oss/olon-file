@@ -1,0 +1,42 @@
+<!-- ╔══════════════════════════════════════════════╗
+     ║  TOAST — Богино мэдэгдэл                    ║
+     ╚══════════════════════════════════════════════╝ -->
+<div class="toast" id="toast"></div>
+
+<!-- ╔══════════════════════════════════════════════╗
+     ║  NAVBAR                                     ║
+     ╚══════════════════════════════════════════════╝ -->
+<nav id="navbar">
+
+  <!-- Лого -->
+  <div class="nav-logo" onclick="gotoPage('movies')">
+    <div class="logo-mark">N</div>
+    <div class="logo-name">NABOO<span>SHY</span></div>
+  </div>
+
+  <!-- Таб цэс -->
+  <div class="nav-tabs">
+    <button class="nav-tab active" id="t-movies"  onclick="gotoPage('movies')">
+      <span class="tab-icon">🎬</span>КИНО
+    </button>
+    <button class="nav-tab"        id="t-series"  onclick="gotoPage('series')">
+      <span class="tab-icon">📺</span>ЦУВРАЛ
+    </button>
+    <button class="nav-tab"        id="t-search"  onclick="gotoPage('search')">
+      <span class="tab-icon">🔍</span>ХАЙХ
+    </button>
+  </div>
+
+  <!-- Хайлт -->
+  <div class="nav-right">
+    <div class="nav-search-wrap" onclick="gotoPage('search')">
+      🔍
+      <input id="navSearchInput"
+             type="text"
+             placeholder="Хайх..."
+             oninput="doSearch(this.value)"
+             onfocus="gotoPage('search')">
+    </div>
+  </div>
+
+</nav>

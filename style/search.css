@@ -1,0 +1,11 @@
+/* ── Search ─────────────────────────────────────── */
+.search-box {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--bg2); border-radius: 12px;
+  padding: 14px 20px; margin: 24px 0;
+}
+.search-box input {
+  flex: 1; background: none; border: none; outline: none;
+  color: var(--text); font-size: 18px;
+}
+.search-count { font-size: 13px; color: var(--text3); margin-bottom: 12px; }
