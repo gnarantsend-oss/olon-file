@@ -1,16 +1,17 @@
 // ══════════════════════════════════════════════════
 // ui/card.js  —  Кино карт компонент
-// makeCard(item, onClick) → HTMLElement
+// makeCard(item, onClick, isFirst) → HTMLElement
 // Карт дизайн өөрчлөх бол ЭНД засна
 // ══════════════════════════════════════════════════
 
-import { CONFIG } from '../core/config.js';
+import { escapeAttr } from './poster.js';
+import './poster.js';   // window.fixPoster бүртгэгдэнэ
 
 /**
  * Кино карт DOM элемент үүсгэх
- * @param {object}   item      — Кино эсвэл цуврал объект
- * @param {function} onClick   — Карт дарахад юу хийх
- * @param {boolean}  isFirst   — Эхний карт уу (eager load)
+ * @param {object}   item    — Кино эсвэл цуврал объект
+ * @param {function} onClick — Карт дарахад юу хийх
+ * @param {boolean}  isFirst — Эхний карт уу (eager load)
  */
 export function makeCard(item, onClick, isFirst = false) {
   const card = document.createElement('div');
@@ -41,55 +42,4 @@ export function makeCard(item, onClick, isFirst = false) {
   card.addEventListener('keydown', e => { if (e.key === 'Enter') onClick(); });
 
   return card;
-}
-
-/**
- * Poster зураг дутуу бол TMDB-с хайж авах
- * Ашиглах: onerror="fixPoster(this, 'Movie Title')"
- */
-window.fixPoster = async function (imgEl, titleEn) {
-  if (imgEl.dataset.tried) return;
-  imgEl.dataset.tried = '1';
-  try {
-    const res  = await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${CONFIG.TMDB_KEY}&query=${encodeURIComponent(titleEn)}`);
-    const data = await res.json();
-    const hit  = data.results?.find(x => x.poster_path);
-    if (hit) { imgEl.src = `https://image.tmdb.org/t/p/w500${hit.poster_path}`; return; }
-  } catch (_) {}
-  imgEl.src = CONFIG.FALLBACK_POSTER;
-};
-
-/** HTML attribute-д тавих утгыг аюулгүй болгох */
-function escapeAttr(str) {
-  return String(str).replace(/'/g, "\\'");
-}
-
-/**
- * Scroll row мөрийг карт-аар дүүргэх
- * @param {string}   rowId     — Элементийн id
- * @param {Array}    items     — Кино жагсаалт
- * @param {function} onClickFn — Карт дарахад (item) => {}
- */
-export function fillRow(rowId, items, onClickFn) {
-  const el = document.getElementById(rowId);
-  if (!el) return;
-  el.innerHTML = '';
-  items.forEach((item, i) => {
-    el.appendChild(makeCard(item, () => onClickFn(item), i === 0));
-  });
-}
-
-/**
- * Grid хэлбэрийн хайрцагт карт-уудыг байрлуулах
- * @param {string}   gridId    — Элементийн id
- * @param {Array}    items     — Кино жагсаалт
- * @param {function} onClickFn — Карт дарахад (item) => {}
- */
-export function fillGrid(gridId, items, onClickFn) {
-  const el = document.getElementById(gridId);
-  if (!el) return;
-  el.innerHTML = '';
-  items.forEach((item, i) => {
-    el.appendChild(makeCard(item, () => onClickFn(item), i < 4));
-  });
 }

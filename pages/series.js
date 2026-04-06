@@ -3,14 +3,14 @@
 // openSeriesDetail(series) — аль ч газраас дуудаж болно
 // ══════════════════════════════════════════════════
 
-import { CONFIG } from '../core/config.js';
-import { store }  from '../core/store.js';
-import { fillGrid } from '../ui/card.js';
+import { CONFIG }              from '../core/config.js';
+import { store }               from '../core/store.js';
+import { fillGrid }            from '../ui/fill.js';
 import { openModal, closeModal } from '../ui/modal.js';
+import { buildGenreBar }       from '../ui/genre-filter.js';
 
 // ── Цуврал detail modal нээх ────────────────────────────────
 window.openSeriesDetail = function (series) {
-  // Hero зураг
   const hero = document.getElementById('smHero');
   if (hero) hero.style.backgroundImage = `url('${series.poster}')`;
 
@@ -18,7 +18,6 @@ window.openSeriesDetail = function (series) {
   setHtml('smMeta',  `⭐ ${series.rating} &nbsp;·&nbsp; ${series.year}`);
   setText('smDesc',  series.desc || '');
 
-  // Ангиудын жагсаалт
   const grid = document.getElementById('smEpGrid');
   if (grid) {
     grid.innerHTML = '';
@@ -47,25 +46,11 @@ window.openSeriesDetail = function (series) {
   openModal('seriesModal');
 };
 
-// ── Цуврал хуудасны жанр шүүлтүүр ──────────────────────────
+// ── Цуврал хуудас барих ─────────────────────────────────────
 export function buildSeriesPage() {
-  const bar = document.getElementById('seriesGenreBar');
-  if (!bar || !store.series.length) return;
+  if (!store.series.length) return;
 
-  bar.innerHTML = '';
-
-  CONFIG.SERIES_GENRES.forEach((genre, i) => {
-    const pill = document.createElement('button');
-    pill.className = 'gpill' + (i === 0 ? ' on' : '');
-    pill.textContent = genre.label;
-    pill.onclick = () => {
-      bar.querySelectorAll('.gpill').forEach(p => p.classList.remove('on'));
-      pill.classList.add('on');
-      renderSeriesGrid(genre.keys);
-    };
-    bar.appendChild(pill);
-  });
-
+  buildGenreBar('seriesGenreBar', CONFIG.SERIES_GENRES, keys => renderSeriesGrid(keys));
   renderSeriesGrid([]); // Эхлээд бүгдийг харуулах
 }
 

@@ -16,31 +16,26 @@
 //   4. Доор import нэмнэ
 // ══════════════════════════════════════════════════
 
-// ── HTML хэсгүүдийг эхэлж ачаалах ──────────────────────────
 import { loadPartials } from './core/partials.js';
 await loadPartials();
 
-// ── UI үндсэн модулиуд ──────────────────────────────────────
 import './ui/toast.js';
 import './ui/modal.js';
 import './ui/card.js';
+import './ui/fill.js';
+import './ui/scroll.js';
 import './ui/hero.js';
 
-// ── Хуудсын модулиуд ────────────────────────────────────────
 import './pages/movies.js';
 import './pages/series.js';
 import './pages/search.js';
 
-// ── Player ──────────────────────────────────────────────────
 import './player/player.js';
 
-// ── Router side effects ─────────────────────────────────────
 import { registerPageEffect } from './core/router.js';
 import { buildSeriesPage }    from './pages/series.js';
 
-// 'series' хуудас нээгдэхэд жанр шүүлтүүр барих
 registerPageEffect('series', () => buildSeriesPage());
 
-// ── Өгөгдөл татах — хамгийн сүүлд ──────────────────────────
 import { loadAllData } from './core/loader.js';
 loadAllData();
