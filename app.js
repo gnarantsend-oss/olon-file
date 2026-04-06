@@ -19,8 +19,10 @@
 import { loadPartials } from './core/partials.js';
 await loadPartials();
 
-import { initMatrixBg } from './ui/matrix-bg.js';
+import { initMatrixBg }  from './ui/matrix-bg.js';
+import { initWatermark } from './ui/watermark.js';
 initMatrixBg();
+initWatermark();
 
 import './ui/toast.js';
 import './ui/modal.js';
