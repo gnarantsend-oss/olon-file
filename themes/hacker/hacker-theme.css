@@ -1,0 +1,12 @@
+/* ═══════════════════════════════════════════════════════════════
+   NABOOSHY HACKER EDITION — Main entry
+   Бүх хэсгийг @import-аар нэгтгэнэ
+   style.css-д хамгийн сүүлд нэмнэ
+   ═══════════════════════════════════════════════════════════════ */
+
+@import './_vars.css';
+@import './_nav.css';
+@import './_hero.css';
+@import './_cards.css';
+@import './_modals.css';
+@import './_pages.css';
